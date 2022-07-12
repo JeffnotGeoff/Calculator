@@ -9,12 +9,13 @@ public:
 	~Window(); //deconstructor
 
 	int buttonsWidth = 11; //Amount of Buttons in a Row
-	int buttonsHeight = 2; //Amount of Buttons in a Column
+	int buttonsHeight = 0; //Amount of Buttons in a Column
 
+	wxTextCtrl* calcText = nullptr; //Text Box for Calculator Control
 
-	wxButton** useButton;
+	wxButton** useButton; //Button Holder/Placer
 
-
+	void OnButtonClicked(wxCommandEvent& evt);
 
 };
 
