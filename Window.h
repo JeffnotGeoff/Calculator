@@ -13,7 +13,7 @@ public:
 
 	wxTextCtrl* calcText = nullptr; //Text Box for Calculator Control
 
-	wxButton** useButton; //Button Holder/Placer
+	wxButton** useButton; //Button Array
 
 	void OnButtonClicked(wxCommandEvent& evt);
 

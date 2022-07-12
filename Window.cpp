@@ -4,8 +4,8 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200,
 
 	wxGridSizer* grid = new wxGridSizer(buttonsWidth, buttonsHeight, 0, 0); //Setup Grid Sizer
 
-	//calcText = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 0), wxSize(100, 20));
-	//grid->Add(calcText, 1, wxEXPAND | wxALL);
+	calcText = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 0), wxSize(100, 20));
+	grid->Add(calcText, 1, wxEXPAND | wxALL);
 
 
 	for (int x = 0; x < buttonsWidth; x++) {
