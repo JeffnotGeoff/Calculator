@@ -14,7 +14,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200,
 	//for(int i = 0; i < 10; i++)
 		//grid->AddSpacer(1);
 
-	for (int y = 0; y < buttonsHeight; y++) {
+	for (int y = 1; y < buttonsHeight; y++) {
 		for (int x = 0; x < buttonsWidth; x++) {
 			useButton[y * buttonsWidth + x] = new wxButton(this, 10000 + (y * buttonsWidth + x)); // Create a button
 
