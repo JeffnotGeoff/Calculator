@@ -2,6 +2,7 @@
 
 Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200, 200), wxSize(650, 650)) {
 
+
 	useButton = new wxButton * [buttonsWidth * buttonsHeight]; //Setup Button Array
 
 	wxGridSizer* grid = new wxGridSizer(buttonsHeight, buttonsWidth, 0, 0); //Setup Grid Sizer

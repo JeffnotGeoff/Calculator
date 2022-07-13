@@ -17,4 +17,10 @@ public:
 	
 	void OnButtonClicked(wxCommandEvent& evt);
 
+private:
+
+
+
+	wxDECLARE_EVENT_TABLE();
+
 };
