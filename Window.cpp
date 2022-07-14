@@ -9,8 +9,6 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200,
 
 
 	calcText = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 0), wxSize(400, 20));
-	
-	
 
 	grid->Add(calcText, 11, wxEXPAND | wxALL);
 	
@@ -23,7 +21,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200,
 		for (int x = 0; x < buttonsWidth; x++) {
 			useButton[(y-1) * buttonsWidth + x] = new wxButton(this, 10000 + ((y-1) * buttonsWidth + x)); // Create a button
 
-			//useButton[y * buttonsWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &Window::OnButtonClicked, this);
+			useButton[(y-1) * buttonsWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &Window::OnButtonClicked, this);
 
 
 			grid->Add(useButton[(y-1)*buttonsWidth+x], 1, wxEXPAND | wxALL);
@@ -72,6 +70,13 @@ Window::~Window() {
 
 void Window::OnButtonClicked(wxCommandEvent& evt) {
 
+	//Obtain Coordinates of the Pressed Button on the Grid
+	int y = (evt.GetId() - 10000) / buttonsWidth;
+	int x = (evt.GetId() - 10000) % buttonsWidth;
+
+	if (y < 1) {
+		calcText->AppendText(useButton[y * buttonsWidth + x]->GetLabel());
+	}
 
 	evt.Skip();
 }
