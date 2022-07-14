@@ -72,6 +72,13 @@ Window::~Window() {
 
 void Window::OnButtonClicked(wxCommandEvent& evt) {
 
+	//Obtain Coordinates of the Pressed Button on the Grid
+	int y = (evt.GetId() - 10000) / buttonsWidth;
+	int x = (evt.GetId() - 10000) % buttonsWidth;
+
+	if (y < 1) {
+		calcText->AppendText(useButton[y * buttonsWidth + x]->GetLabel());
+	}
 
 	evt.Skip();
 }
