@@ -23,7 +23,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Bootleg Calculator", wxPoint(200,
 		for (int x = 0; x < buttonsWidth; x++) {
 			useButton[(y-1) * buttonsWidth + x] = new wxButton(this, 10000 + ((y-1) * buttonsWidth + x)); // Create a button
 
-			//useButton[y * buttonsWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &Window::OnButtonClicked, this);
+			useButton[(y-1) * buttonsWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &Window::OnButtonClicked, this);
 
 
 			grid->Add(useButton[(y-1)*buttonsWidth+x], 1, wxEXPAND | wxALL);
