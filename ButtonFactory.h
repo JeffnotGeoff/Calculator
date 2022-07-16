@@ -3,6 +3,11 @@
 
 class ButtonFactory
 {
-	virtual wxButton CreateButtons(int modifier);
+
+public:
+
+	wxButton creationButton;
+
+	virtual wxButton CreateAButton(int modifier);
 };
 
